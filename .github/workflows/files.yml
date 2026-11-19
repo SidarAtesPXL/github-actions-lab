@@ -8,12 +8,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: maak een map aan en een tekstbestand
-        run: 
+        run: |
           mkdir -p oefenmap
           echo "dit is mijn eerste bestand." > oefenmap/bericht.txt
 
       - name: toon de map en de tekst
-        run: 
+        run: |
           ls -lah oefenmap
           cat oefenmap/bericht.txt
   
