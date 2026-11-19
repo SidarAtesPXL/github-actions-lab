@@ -1,0 +1,17 @@
+name: Issue Trigger
+
+on: 
+  issues:
+    types: [opened]
+
+jobs:
+  show-issue:
+    runs-on: ubuntu-latest
+    steps:
+      - name: toon de titel en beschrijving
+        env:
+          ISSUE_TITLE: ${{ github.event.issue.title }}
+          ISSUE_BODY: ${{ github.event.issue.body }}
+        run: |
+          printf 'Titel: %s\n' "$ISSUE_TITLE"
+          printf 'Beschrijving:\n%s\n' "$ISSUE_BODY"
