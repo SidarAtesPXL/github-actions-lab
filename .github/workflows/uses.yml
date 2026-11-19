@@ -1,0 +1,24 @@
+name: Uses Examples
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  uses-example:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Haal de repository op
+        uses: actions/checkout@v7.0.1
+
+      - name: Stel Python 3.13 in
+        uses: actions/setup-python@v7
+        with:
+          python-version: '3.13'
+
+      - name: Voer het script uit
+        run: |
+          python --version
+          python my_script.py
