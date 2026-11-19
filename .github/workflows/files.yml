@@ -1,4 +1,4 @@
-name:  Files
+name: Files
 
 on: 
   workflow_dispatch:
